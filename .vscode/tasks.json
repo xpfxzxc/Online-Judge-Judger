@@ -1,0 +1,30 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-I",
+        "/usr/local/include",
+        "-L",
+        "/usr/local/lib",
+        "-Wall",
+        "-g",
+        "*.cpp",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}",
+        "-lyaml-cpp",
+        "-lstdc++fs"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": "build"
+    }
+  ]
+}
